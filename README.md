@@ -3,3 +3,8 @@
 
 Organize your final project source files for your [proposal](proposal/),
 [paper](paper/), [presentation](presentation/), and [implementation code](src/).
+
+
+# People
+Matt Buchholz and David Baines.
+(Matt): @EinsZwo (https://github.com/EinsZwo) is also me. I had authentication issues getting both of my GH accounts to work from the command line, so it was just easier to add my other account to this repo as well.
