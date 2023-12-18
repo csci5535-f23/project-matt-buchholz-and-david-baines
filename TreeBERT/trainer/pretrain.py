@@ -89,7 +89,7 @@ class BERTTrainer:
               total_correct * 100.0 / total_element)
 
 
-        # could augment this with code-executor data?
+        # could augment this with code-executor results?
 
         return avg_loss / len(data_iter)
 

@@ -16,9 +16,9 @@ from tqdm import tqdm
 from tree_sitter import Language, Parser
 
 
-CS_LANGUAGE = Language('build_parser/languages_java_py_cs.so', 'c_sharp')
-JA_LANGUAGE = Language('build_parser/languages_java_py_cs.so', 'java')
-PY_LANGUAGE = Language('build_parser/languages_java_py_cs.so', 'python')
+CS_LANGUAGE = Language('../build_parser/languages_java_py_cs.so', 'c_sharp')
+JA_LANGUAGE = Language('../build_parser/languages_java_py_cs.so', 'java')
+PY_LANGUAGE = Language('../build_parser/languages_java_py_cs.so', 'python')
 
 lang = {
     "py" : PY_LANGUAGE,
@@ -260,7 +260,7 @@ def truncatCode(code, max_code_len):
     return trunc_code
 
 def ParseToASTPath(Path, savepath, max_code_len=200, max_node_num=20, max_path_num=100):
-    files= os.listdir(Path)
+    files = os.listdir(Path)
     fail_num = 0    
 
     for index, file in enumerate(files):
@@ -344,9 +344,12 @@ def ParseToASTPath(Path, savepath, max_code_len=200, max_node_num=20, max_path_n
     print("fail number:", fail_num)
 
 
+# def separate_py_files(path):
+#     with open(path, 'r') as infile:
+
+
 if __name__ == "__main__":
     Path = 'raw_data'
     savepath = 'preprocessed_data'
-
 
     ParseToASTPath(Path, savepath, max_code_len=200, max_node_num=20, max_path_num=100)
