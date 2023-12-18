@@ -1,0 +1,33 @@
+\documentclass[11pt]{exam}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{mathptmx}
+
+\usepackage{xspace}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{mathpartir}
+\usepackage{graphicx} % Required for inserting images
+
+\title{PL Project}
+\author{Matt Buchholz, David Baines }
+\date{October 2023}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+ Basic problem: Can a language model trained to perform some task with code (like e.g. GitHub Copilot's code 'auto-complete' feature) be improved with constraints on the well-formedness of their outputs.
+
+  We draw inspiration from related work in natural languages, where e.g. Tziafas et al.  \cite{Tziafas} show that pre-training a BERT-based model on a part-of-speech tagging-like task improves downstream performance on other tasks. We could apply a similar approach, but instead of using the grammatical parse of natural language, we could train the model on a similar task with the syntactic parse of code. Or, we could follow an approach similar to Han et al. \cite{han-etal-2019-joint}, by using ILP formulations about the syntactic well-formedness of a program to constrain some of the model's optimization.
+  Liu et al. \cite{liu2023code} do something similar, formulating 'code execution' as a pre-training task, and demonstrating a model pre-trained on that task performs better on downstream tasks, such as natural language-to-code translation.
+
+  We're still in the exploratory phase of the project; it's unclear how feasible this project is, since we're not familiar with the availability of open-source models for working with code or datasets for any training or benchmarking tasks. (And we're not going to try to train something from scratch.) Though, Wang et al. \cite{wang2023codet5} seems to point to (at least some) models and datasets being readily available, including the CodeT5+ model they introduce.
+
+
+  For context: we \emph{did} try to scan the papers of top PL conferences, but found papers which were largely not interesting to us (or beyond our understanding of PL such that it's hard to gauge the difficulty or novelty of a paper's achievement). Since we both have backgrounds in AI, something at the intersection of PL and AI seems most appropriate.
+
+\bibliography{refs}
+\end{document}
